@@ -2,14 +2,13 @@ extends CharacterBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 200.0
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	# Rotate the body to mouse
-
+	look_at(get_global_mouse_position())
 
 
 	# Get the input direction and handle the movement/deceleration.

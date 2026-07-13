@@ -7,15 +7,14 @@
 radius = 65.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(-12, -30)
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(14, 17)
+position = Vector2(-1, -1)
+rotation = 1.5707964
 scale = Vector2(8.45, 8.45)
 texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(13, 29)
+position = Vector2(0.17499542, -0.375)
 shape = SubResource("CircleShape2D_4flbx")
