@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @onready var magnet: CharacterBody2D = $"../Magnet"
 
@@ -18,3 +18,5 @@ func _physics_process(delta: float) -> void:
 	var distance = global_position.distance_to(magPosition)
 	if distance > minDistance:
 		position = lerp(position, magPosition, 0.2*delta)
+		
+	move_and_slide()
