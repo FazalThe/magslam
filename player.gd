@@ -5,10 +5,11 @@ extends CharacterBody2D
 const SPEED = 200.0
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	# Rotate the body to mouse
-	look_at(get_global_mouse_position())
+	var mouse_angle = global_position.angle_to_point(get_global_mouse_position())
+	rotation = lerp_angle(rotation, mouse_angle, 6*delta)
 
 
 	# Get the input direction and handle the movement/deceleration.

@@ -7,10 +7,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
-	look_at(magnet.position)
-	
-	
+	var target_angle = global_position.angle_to_point(magnet.global_position)
+	rotation = lerp_angle(rotation, target_angle, 3.5 * delta)
+	#lerp()
+
+
 
 	move_and_slide()
