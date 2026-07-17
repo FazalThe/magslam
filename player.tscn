@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6wl30o5rhyfo"]
+[gd_scene load_steps=6 format=3 uid="uid://c6wl30o5rhyfo"]
 
 [ext_resource type="Texture2D" uid="uid://e6e05b2d2cl0" path="res://Assets/Characters/magnet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://vuqjpk22fpjg" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://bfodha7557lvu" path="res://area_2d.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://cb4cqmdbr8y8y" path="res://attract_area.gd" id="4_hqtel"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
 radius = 65.0
@@ -20,10 +21,20 @@ texture = ExtResource("1_4flbx")
 position = Vector2(0.17499542, -0.375)
 shape = SubResource("CircleShape2D_4flbx")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="RepelArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_i3pqv")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RepelArea"]
+scale = Vector2(2.36, 2.36)
 polygon = PackedVector2Array(200, -105, 228, 0, 200, 105, 0, 0)
+
+[node name="AttractArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_hqtel")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttractArea"]
+scale = Vector2(1.57, 5.211)
+polygon = PackedVector2Array(500, -105, 600, 0, 501, 105, 0, 0)

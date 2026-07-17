@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = directionY * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
 	#attraction
 	
 	move_and_slide()
