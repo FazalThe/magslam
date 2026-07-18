@@ -15,9 +15,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func attract(body: CharacterBody2D):
-	var angle = parent.global_rotation
-	print(angle)
-	var center: Vector2 = global_position + (Vector2(cos(angle),sin(angle)) * 200)
+	
+	#var center: Vector2 = global_position + (Vector2(cos(angle),sin(angle)) * 200) #pulls towards a point infron of mag
+	var center: Vector2 = global_position #pull towards the center of mag
 	var dir = -center.direction_to(body.global_position)
 	var dist = global_position.distance_to(body.global_position)
 	var factor = (1/(dist*dist))*1000

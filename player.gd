@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 
 const SPEED = 200.0
+var health = 300
 
 
 func _physics_process(delta: float) -> void:
@@ -28,3 +29,6 @@ func _physics_process(delta: float) -> void:
 	#attraction
 	
 	move_and_slide()
+
+func take_damage(damage):
+	health -= damage
