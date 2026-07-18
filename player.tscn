@@ -11,30 +11,33 @@ radius = 65.0
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+rotation = 3.1415927
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 position = Vector2(11, -1)
 rotation = 1.5707964
 scale = Vector2(8.45, 8.45)
 texture = ExtResource("1_4flbx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.17499542, -0.375)
-shape = SubResource("CircleShape2D_4flbx")
-
-[node name="RepelArea" type="Area2D" parent="."]
+[node name="RepelArea" type="Area2D" parent="Node2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_i3pqv")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RepelArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/RepelArea"]
 scale = Vector2(2.36, 2.36)
 polygon = PackedVector2Array(200, -105, 228, 0, 200, 105, 0, 0)
 
-[node name="AttractArea" type="Area2D" parent="."]
+[node name="AttractArea" type="Area2D" parent="Node2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_hqtel")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttractArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/AttractArea"]
 scale = Vector2(1.57, 5.211)
 polygon = PackedVector2Array(500, -105, 600, 0, 501, 105, 0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.17499542, -0.375)
+shape = SubResource("CircleShape2D_4flbx")

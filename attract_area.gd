@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var parent: CharacterBody2D = $".."
+@onready var parent: CharacterBody2D = $"../.."
 
 
 const forcePwr = 300
