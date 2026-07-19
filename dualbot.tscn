@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5vtble46hk1y"]
+[gd_scene format=3 uid="uid://b5vtble46hk1y"]
 
 [ext_resource type="Script" uid="uid://dptci2n6kwl87" path="res://dualbot.gd" id="1_4bj0b"]
 [ext_resource type="Texture2D" uid="uid://cxogh155bspdp" path="res://Assets/Characters/robot.png" id="1_toofv"]
@@ -6,15 +6,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_toofv"]
 radius = 28.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1474676651]
 collision_layer = 3
 script = ExtResource("1_4bj0b")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=294264683]
 position = Vector2(7.9999995, 4.768372e-07)
 rotation = -1.5707964
 scale = Vector2(4.19, 4.19)
 texture = ExtResource("1_toofv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1672940844]
 shape = SubResource("CircleShape2D_toofv")

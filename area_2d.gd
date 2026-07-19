@@ -17,3 +17,4 @@ func repel(body: CharacterBody2D, force):
 	var dist = global_position.distance_to(body.global_position)
 	var factor = (1/(dist*dist))*1000
 	body.velocity += factor * force * dir
+	
