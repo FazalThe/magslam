@@ -38,9 +38,3 @@ script = ExtResource("4_hqtel")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttractArea" unique_id=919756331]
 scale = Vector2(1.57, 5.211)
 polygon = PackedVector2Array(500, -105, 600, 0, 501, 105, 0, 0)
-
-[node name="Timer" type="Timer" parent="." unique_id=244570307]
-wait_time = 0.5
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,16 +1,19 @@
 extends CharacterBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $"../EndTimer"
+signal died
 
 const SPEED = 200.0
-var health = 300
+var health = 30
 
 
 func _physics_process(delta: float) -> void:
 	if health <= 0 :
+		emit_signal("died")
 		queue_free()
 		timer.start()
+		
 	# Rotate the body to mouse
 	var mouse_angle = global_position.angle_to_point(get_global_mouse_position())
 	rotation = lerp_angle(rotation, mouse_angle, 6*delta)
@@ -35,7 +38,3 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage):
 	health -= damage
-
-
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
