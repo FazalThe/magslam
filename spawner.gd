@@ -6,10 +6,10 @@ var gameOver = false
 @onready var magnet: CharacterBody2D = $"../Magnet"
 @onready var timer: Timer = $"../SpawnTimer"
 
-const mindis = 150
-const maxdis = 250
+const mindis = 250
+const maxdis = 350
 
-const fact = mindis - maxdis # no need to/ dont change
+const fact = maxdis - mindis # no need to/ dont change
 
 func _ready() -> void:
 	randomize()
@@ -25,7 +25,14 @@ func _on_timer_timeout() -> void:
 	var dualbot:CharacterBody2D = dual_scene.instantiate()
 	add_child(dualbot)
 	var magPos = magnet.global_position
-	var pos = magPos + (Vector2(randf(),randf()) * (mindis + (randf()*fact))) # returns a random point around magnet with dis b/w min & max dis
+	
+	var angle = randf_range(0,2*PI)
+	var dis = (mindis + (randf()*fact))
+	var vectorDis = Vector2( cos(angle), sin(angle) ) * dis
+	print(angle," ",dis," ",vectorDis)
+	
+	var pos = magPos + vectorDis # returns a random point around magnet with dis b/w min & max dis
+	print(magPos-pos)
 	dualbot.position = pos
 
 

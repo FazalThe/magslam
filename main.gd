@@ -12,5 +12,4 @@ func _process(_delta: float) -> void:
 
 
 func _on_end_timer_timeout() -> void:
-	print("timeout")
 	get_tree().reload_current_scene()

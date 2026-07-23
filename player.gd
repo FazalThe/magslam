@@ -5,7 +5,7 @@ extends CharacterBody2D
 signal died
 
 const SPEED = 200.0
-var health = 30
+var health = 300
 
 
 func _physics_process(delta: float) -> void:

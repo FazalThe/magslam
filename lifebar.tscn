@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://mxu6q8ba3qnp"]
+
+[ext_resource type="Script" uid="uid://5fqdt0hk5x0a" path="res://lifebar.gd" id="1_f4q6g"]
+
+[sub_resource type="Theme" id="Theme_sweqy"]
+
+[node name="LifeBar" type="Control" unique_id=70880582]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f4q6g")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1956851202]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 39.0
+offset_right = -609.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme = SubResource("Theme_sweqy")
+max_value = 300.0
+value = 200.0
