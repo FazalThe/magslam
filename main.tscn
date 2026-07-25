@@ -110,6 +110,7 @@ size = Vector2(836, 616)
 script = ExtResource("1_2cqfq")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1254845540]
+wait_time = 5.0
 autostart = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=433909597]

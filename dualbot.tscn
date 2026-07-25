@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dptci2n6kwl87" path="res://dualbot.gd" id="1_4bj0b"]
 [ext_resource type="Texture2D" uid="uid://cxogh155bspdp" path="res://Assets/Characters/robot.png" id="1_toofv"]
+[ext_resource type="PackedScene" uid="uid://brq8sosvqlttb" path="res://enemybar.tscn" id="3_lntne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_toofv"]
 radius = 28.0
@@ -18,3 +19,16 @@ texture = ExtResource("1_toofv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1672940844]
 shape = SubResource("CircleShape2D_toofv")
+
+[node name="EnemyBar" parent="." unique_id=2116335397 instance=ExtResource("3_lntne")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -28.0
+offset_top = 45.0
+offset_right = 27.0
+offset_bottom = 60.0
+grow_horizontal = 1
+grow_vertical = 1

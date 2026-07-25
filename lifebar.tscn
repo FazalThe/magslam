@@ -4,6 +4,11 @@
 
 [sub_resource type="Theme" id="Theme_sweqy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mve8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3dai"]
+bg_color = Color(0.33811378, 0.703061, 0, 1)
+
 [node name="LifeBar" type="Control" unique_id=70880582]
 layout_mode = 3
 anchors_preset = 15
@@ -15,13 +20,18 @@ script = ExtResource("1_f4q6g")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1956851202]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 25.0
-offset_top = 39.0
-offset_right = -609.0
-offset_bottom = 66.0
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.060000002
+anchor_right = 0.47100002
+anchor_bottom = 0.102000006
+offset_left = -0.34400177
+offset_top = 0.11999893
+offset_right = 0.40795898
+offset_bottom = -0.09600067
 grow_horizontal = 2
 theme = SubResource("Theme_sweqy")
+theme_override_styles/background = SubResource("StyleBoxFlat_4mve8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x3dai")
 max_value = 300.0
 value = 200.0
