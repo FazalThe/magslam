@@ -104,7 +104,7 @@ sources/11 = SubResource("TileSetAtlasSource_vivmo")
 sources/12 = SubResource("TileSetAtlasSource_2cqfq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cdfc"]
-size = Vector2(821, 591)
+size = Vector2(836, 616)
 
 [node name="Node2D" type="Node2D" unique_id=454918293]
 script = ExtResource("1_2cqfq")
@@ -136,7 +136,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner/Area2D" unique_id=743916103]
-position = Vector2(414.5, -307.5)
+position = Vector2(413, -305)
 shape = SubResource("RectangleShape2D_6cdfc")
 
 [node name="EndTimer" type="Timer" parent="." unique_id=2119129683]

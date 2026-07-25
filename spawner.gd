@@ -7,6 +7,7 @@ var gameOver = false
 @onready var parent: Node2D = get_parent()
 @onready var magnet: CharacterBody2D = $"../Magnet"
 @onready var timer: Timer = $"../SpawnTimer"
+@onready var wall: TileMapLayer = $"../TileMapLayer"
 
 const mindis = 250
 const maxdis = 350
@@ -31,9 +32,14 @@ func _on_timer_timeout() -> void:
 	var magPos = magnet.global_position 
 	
 	var inArea = false
+	var inWall = false
+	var limit = 0
 	while true:
 
-		
+		limit += 1
+		print(limit)
+		if limit > 100:
+			break
 		
 		var angle = randf_range(0,TAU)
 		var dis = (mindis + (randf()*fact))
@@ -43,15 +49,18 @@ func _on_timer_timeout() -> void:
 		var query = PhysicsShapeQueryParameters2D.new()
 		query.shape = dualbot.get_node("CollisionShape2D").shape
 		query.transform = Transform2D(0, pos)
-		query.collision_mask = area.collision_layer
 		query.collide_with_areas = true
 		
 		
 		var colliding = space.intersect_shape(query)
-		print(colliding)
 		
-		
-		if not colliding.is_empty():
+		for collision in colliding:
+			if collision.collider == area:
+				inArea = true
+			if collision.collider == wall:
+				inWall = true
+			
+		if inArea && not inWall:
 			dualbot.position = pos 
 			add_child(dualbot)
 			break
