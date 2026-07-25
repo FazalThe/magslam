@@ -8,8 +8,10 @@ const minDistance = 220
 const SPEED = 300.0
 var health = 100
 @onready var spawner: Node2D = $".."
+@onready var sprite: Sprite2D = $Sprite2D
 
 func _physics_process(delta: float) -> void:
+	var rot = sprite.rotation
 	if health <=0 :
 		queue_free()
 	else:
@@ -18,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		#face the magnet
 			var magPosition: Vector2 = magnet.global_position 
 			var target_angle = global_position.angle_to_point(magPosition)
-			rotation = lerp_angle(rotation, target_angle, 3.5 * delta)
+			sprite.rotation = lerp_angle(sprite.rotation, (target_angle- PI/2), 3.5 * delta)
 			
 			#move towards magnet
 			var distance = global_position.distance_to(magPosition)

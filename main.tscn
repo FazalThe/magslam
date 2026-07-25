@@ -103,11 +103,13 @@ sources/10 = SubResource("TileSetAtlasSource_getpj")
 sources/11 = SubResource("TileSetAtlasSource_vivmo")
 sources/12 = SubResource("TileSetAtlasSource_2cqfq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cdfc"]
+size = Vector2(821, 591)
+
 [node name="Node2D" type="Node2D" unique_id=454918293]
 script = ExtResource("1_2cqfq")
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1254845540]
-wait_time = 5.0
 autostart = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=433909597]
@@ -128,6 +130,14 @@ script = ExtResource("15_vivmo")
 
 [node name="DualBot" parent="Spawner" unique_id=300262111 instance=ExtResource("14_w48qg")]
 position = Vector2(511, -429)
+
+[node name="Area2D" type="Area2D" parent="Spawner" unique_id=1235315666]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawner/Area2D" unique_id=743916103]
+position = Vector2(414.5, -307.5)
+shape = SubResource("RectangleShape2D_6cdfc")
 
 [node name="EndTimer" type="Timer" parent="." unique_id=2119129683]
 wait_time = 0.5
