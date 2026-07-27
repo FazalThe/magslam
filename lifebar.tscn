@@ -5,9 +5,17 @@
 [sub_resource type="Theme" id="Theme_sweqy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mve8"]
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3dai"]
 bg_color = Color(0.33811378, 0.703061, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [node name="LifeBar" type="Control" unique_id=70880582]
 layout_mode = 3
@@ -34,4 +42,5 @@ theme = SubResource("Theme_sweqy")
 theme_override_styles/background = SubResource("StyleBoxFlat_4mve8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x3dai")
 max_value = 300.0
-value = 200.0
+value = 300.0
+show_percentage = false

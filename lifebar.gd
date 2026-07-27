@@ -1,7 +1,7 @@
 extends Control
 
 @onready var bar: ProgressBar = $ProgressBar
-@onready var mag: CharacterBody2D = $"../Magnet"
+@onready var mag: CharacterBody2D = $"../../Magnet"
 var gameOver = false
 
 # Called when the node enters the scene tree for the first time.

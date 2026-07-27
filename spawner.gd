@@ -10,7 +10,7 @@ var gameOver = false
 @onready var wall: TileMapLayer = $"../TileMapLayer"
 
 const mindis = 250
-const maxdis = 350
+const maxdis = 450
 @onready var area: Area2D = $Area2D
 
 const fact = maxdis - mindis # no need to/ dont change
@@ -37,7 +37,6 @@ func _on_timer_timeout() -> void:
 	while true:
 
 		limit += 1
-		print(limit)
 		if limit > 100:
 			break
 		
@@ -68,7 +67,6 @@ func _on_timer_timeout() -> void:
 
 
 func _on_magnet_died() -> void:
-	print("hi")
 	gameOver = true
 	#for enemies in get_children():
 		#enemies.gameOver = true
