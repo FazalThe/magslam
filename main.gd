@@ -2,7 +2,7 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var magnet: CharacterBody2D = $Magnet
 var gameOver = false
-
+var kill = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

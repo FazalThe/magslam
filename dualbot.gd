@@ -9,10 +9,12 @@ const SPEED = 300.0
 var health = 100
 @onready var spawner: Node2D = $".."
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var parent: Node2D = get_parent().get_parent()
 
 func _physics_process(delta: float) -> void:
 	var rot = sprite.rotation
 	if health <=0 :
+		parent.kill += 1
 		queue_free()
 	else:
 		var gameOver = spawner.gameOver

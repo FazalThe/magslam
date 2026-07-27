@@ -6,7 +6,7 @@ var dual_scene = preload("res://dualbot.tscn")
 var gameOver = false
 @onready var parent: Node2D = get_parent()
 @onready var magnet: CharacterBody2D = $"../Magnet"
-@onready var timer: Timer = $"../SpawnTimer"
+@onready var timer: Timer = $SpawnTimer
 @onready var wall: TileMapLayer = $"../TileMapLayer"
 
 const mindis = 250
@@ -14,6 +14,8 @@ const maxdis = 450
 @onready var area: Area2D = $Area2D
 
 const fact = maxdis - mindis # no need to/ dont change
+
+var i = 0
 
 func _ready() -> void:
 	randomize()
@@ -63,7 +65,12 @@ func _on_timer_timeout() -> void:
 			dualbot.position = pos 
 			add_child(dualbot)
 			break
-	
+			
+	# timer dur
+	i += 1
+	if i >= 5:
+		timer.wait_time -= 0.1
+		i = 0
 
 
 func _on_magnet_died() -> void:
