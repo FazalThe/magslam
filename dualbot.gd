@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var magnet: CharacterBody2D = $"../../Magnet"
 @onready var tile: TileMapLayer = $"../../TileMapLayer"
+@onready var audio: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
 
 
 const minDistance = 220
@@ -12,7 +13,6 @@ var health = 100
 @onready var parent: Node2D = get_parent().get_parent()
 
 func _physics_process(delta: float) -> void:
-	var rot = sprite.rotation
 	if health <=0 :
 		parent.kill += 1
 		queue_free()
@@ -35,8 +35,13 @@ func _physics_process(delta: float) -> void:
 			
 			if get_slide_collision_count() > 0:
 				var collision = get_slide_collision(0)
+				if not audio.playing:
+					audio.volume_db = -15 + ( speed/30)
+					audio.play()
+					
 				
 				if speed > 100:
+						
 					var damage = (speed - 100) * 0.1
 					take_damage(damage)
 					var collider = collision.get_collider()

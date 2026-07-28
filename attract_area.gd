@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var parent: CharacterBody2D = $".."
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 const forcePwr = 300
@@ -9,9 +10,13 @@ const forcePwr = 300
 func _physics_process(_delta: float) -> void:
 
 	if Input.is_action_pressed("Left"):
+		if not audio.playing:
+			audio.play()
 		for body: CharacterBody2D in get_overlapping_bodies():
 			
 			attract(body)
+	else:
+		audio.stop()
 
 
 func attract(body: CharacterBody2D):

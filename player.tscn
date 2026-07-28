@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://vuqjpk22fpjg" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://crvs6ymab87rc" path="res://Assets/Sector.png" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cb4cqmdbr8y8y" path="res://attract_area.gd" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://csju0bs8v6no5" path="res://Assets/sounds/mag.mp3" id="5_sweqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
 radius = 65.0
@@ -37,6 +38,10 @@ shape = SubResource("CircleShape2D_4flbx")
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_hqtel")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AttractArea" unique_id=642467340]
+stream = ExtResource("5_sweqy")
+volume_db = 9.122
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttractArea" unique_id=919756331]
 scale = Vector2(1.57, 5.211)
