@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dptci2n6kwl87" path="res://dualbot.gd" id="1_4bj0b"]
 [ext_resource type="Texture2D" uid="uid://cxogh155bspdp" path="res://Assets/Characters/robot.png" id="1_toofv"]
 [ext_resource type="PackedScene" uid="uid://brq8sosvqlttb" path="res://enemybar.tscn" id="3_lntne"]
+[ext_resource type="Script" uid="uid://6it0cf4v88qu" path="res://spawn.gd" id="4_enw83"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_toofv"]
 radius = 28.0
@@ -32,3 +33,18 @@ offset_right = 27.0
 offset_bottom = 60.0
 grow_horizontal = 1
 grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Spawn" type="Node2D" parent="." unique_id=105427898]
+script = ExtResource("4_enw83")
+
+[node name="MarkerUp" type="Marker2D" parent="Spawn" unique_id=223874019]
+position = Vector2(39, -14)
+
+[node name="MarkerDown" type="Marker2D" parent="Spawn" unique_id=60641326]
+position = Vector2(39, 15)
+
+[node name="Timer" type="Timer" parent="Spawn" unique_id=1957640476]
+autostart = true
+
+[connection signal="timeout" from="Spawn/Timer" to="Spawn" method="_on_timer_timeout"]

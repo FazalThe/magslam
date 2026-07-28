@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://e6e05b2d2cl0" path="res://Assets/Characters/magnet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://vuqjpk22fpjg" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Script" uid="uid://bfodha7557lvu" path="res://area_2d.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://crvs6ymab87rc" path="res://Assets/Sector.png" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://cb4cqmdbr8y8y" path="res://attract_area.gd" id="4_hqtel"]
 
@@ -10,6 +9,7 @@
 radius = 65.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1281541146]
+collision_mask = 5
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=907284660]
@@ -33,15 +33,6 @@ texture = ExtResource("3_sweqy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018677473]
 position = Vector2(0.17499542, -0.375)
 shape = SubResource("CircleShape2D_4flbx")
-
-[node name="RepelArea" type="Area2D" parent="." unique_id=577496707]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("3_i3pqv")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RepelArea" unique_id=1746643424]
-scale = Vector2(2.36, 2.36)
-polygon = PackedVector2Array(200, -105, 228, 0, 200, 105, 0, 0)
 
 [node name="AttractArea" type="Area2D" parent="." unique_id=1387424703]
 collision_layer = 0

@@ -12,7 +12,6 @@ var health = 100
 @onready var parent: Node2D = get_parent().get_parent()
 
 func _physics_process(delta: float) -> void:
-	var rot = sprite.rotation
 	if health <=0 :
 		parent.kill += 1
 		queue_free()
@@ -22,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		#face the magnet
 			var magPosition: Vector2 = magnet.global_position 
 			var target_angle = global_position.angle_to_point(magPosition)
-			sprite.rotation = lerp_angle(sprite.rotation, (target_angle- PI/2), 3.5 * delta)
+			rotation = lerp_angle(rotation, (target_angle), 3.5 * delta)
 			
 			#move towards magnet
 			var distance = global_position.distance_to(magPosition)
@@ -43,6 +42,7 @@ func _physics_process(delta: float) -> void:
 					if collider != tile:
 						collision.get_collider().take_damage(damage)
 					
+		# Bullets
 		
 
 			
