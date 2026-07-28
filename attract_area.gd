@@ -8,7 +8,7 @@ const forcePwr = 300
 # Called when the node enters the scene tree for the first time.
 func _physics_process(_delta: float) -> void:
 
-	if Input.is_action_pressed("Right"):
+	if Input.is_action_pressed("Left"):
 		for body: CharacterBody2D in get_overlapping_bodies():
 			
 			attract(body)
