@@ -22,4 +22,8 @@ The goal of the game is to kill as much bots as possible without dying. You coul
 
 This game falls into the endless theme because as long as you dont lose the game never ends, theoratically you can play this game for infinty.
 
+---
 
+## Demo Gameplay
+
+![Alt](https://cdn.hackclub.com/019fae60-e9f0-7245-afd7-31606cf88fa4/screencast_20260729_200018__online-video-cutter.com___1_.mp4)
