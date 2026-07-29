@@ -30,6 +30,10 @@ This game falls into the endless theme because as long as you dont lose the game
 
 https://github.com/user-attachments/assets/8f8b2209-5451-40f2-8fa0-7d47a9806ae9
 
+---
 
+## Credits
+
+- Tiles used in the game is take from craftpix.net
 
 
