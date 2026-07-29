@@ -26,4 +26,10 @@ This game falls into the endless theme because as long as you dont lose the game
 
 ## Demo Gameplay
 
-![Alt](https://cdn.hackclub.com/019fae60-e9f0-7245-afd7-31606cf88fa4/screencast_20260729_200018__online-video-cutter.com___1_.mp4)
+
+
+https://github.com/user-attachments/assets/8f8b2209-5451-40f2-8fa0-7d47a9806ae9
+
+
+
+
