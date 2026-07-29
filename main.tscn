@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ae8k8jy1cje" path="res://Assets/1 Tiles/IndustrialTile_57.png" id="39_hrvbo"]
 [ext_resource type="AudioStream" uid="uid://tremtsobnapi" path="res://Assets/sounds/hit.mp3" id="48_hrvbo"]
 [ext_resource type="Script" uid="uid://ckh1alq017jre" path="res://label.gd" id="49_0cbny"]
+[ext_resource type="PackedScene" uid="uid://dnl8wpkj4h0t2" path="res://game_over.tscn" id="51_uypp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkkcx"]
 texture = ExtResource("2_0n3wm")
@@ -423,8 +424,12 @@ offset_bottom = 39.0
 text = "Kill : 11"
 script = ExtResource("49_0cbny")
 
+[node name="GameOver" parent="CanvasLayer" unique_id=1352032520 instance=ExtResource("51_uypp3")]
+visible = false
+
 [connection signal="died" from="Magnet" to="." method="_on_magnet_died"]
 [connection signal="died" from="Magnet" to="Spawner" method="_on_magnet_died"]
 [connection signal="died" from="Magnet" to="CanvasLayer/LifeBar" method="_on_magnet_died"]
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="EndTimer" to="." method="_on_end_timer_timeout"]
+[connection signal="timeout" from="EndTimer" to="CanvasLayer/GameOver" method="_on_end_timer_timeout"]

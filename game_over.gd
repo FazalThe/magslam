@@ -1,5 +1,8 @@
-extends Label
-@onready var parent:= get_parent().get_parent()
+extends Control
+
+@onready var parent: Node2D = $"../.."
+@onready var label: Label = $Label2
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,5 +11,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var kill = str(parent.kill)
-	text = "KILL: " + kill
+	pass
+
+
+func _on_end_timer_timeout() -> void:
+	label.text = "KILL : " + str(parent.kill)
